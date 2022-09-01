@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import {collection, addDoc} from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 import "./Review.scss";
 import { db } from "../Lib/init-firebase";
@@ -8,6 +8,7 @@ const Review = ({ modalHandler }) => {
   const textarea = useRef();
   const input = useRef();
   const [invalidField, setInvalidField] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const submitHandler = async function (event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -17,12 +18,13 @@ const Review = ({ modalHandler }) => {
       setInvalidField(true);
       return;
     }
-    textarea.current.value = "";
-    input.current.value = "";
+    setIsLoading(true);
     // Store data { review, reviewer }
     const reviewsCollectionRef = collection(db, "reviews");
-    const newReview = await addDoc(reviewsCollectionRef, { review, reviewer });
-    console.log(newReview);
+    await addDoc(reviewsCollectionRef, { review, reviewer });
+    setIsLoading(false);
+    textarea.current.value = "";
+    input.current.value = "";
     modalHandler(true);
   };
 
@@ -76,7 +78,7 @@ const Review = ({ modalHandler }) => {
           </div>
           <section className="form__cta">
             <button disabled={invalidField} type="submit">
-              Send
+              {isLoading ? <span class="loading"></span> : "Send"}
             </button>
           </section>
         </form>

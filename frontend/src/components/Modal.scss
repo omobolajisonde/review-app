@@ -42,7 +42,7 @@
       cursor: pointer;
       &:hover > svg,
       &:focus > svg {
-        fill: #fff;
+        fill: $primary-color;
       }
       & svg {
         width: 3rem;
