@@ -1,0 +1,120 @@
+@import "../sass/variables";
+// .nav {
+// }
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  font-family: $heading-font;
+  &__text {
+    flex-basis: 100%;
+    font-family: inherit;
+    font-size: 4rem;
+    & span {
+      margin-left: 5px;
+      font: inherit;
+      color: $secondary-color;
+    }
+    &-sub {
+      flex-basis: 100%;
+      font-family: inherit;
+      font-size: 10.5px;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+}
+
+.review {
+  padding: 2rem 4rem;
+  position: relative;
+  z-index: 5;
+  &__text {
+    font-size: 5rem;
+    text-align: center;
+    line-height: 7rem;
+    & span {
+      color: $secondary-color;
+    }
+  }
+}
+
+.form {
+  width: 55rem;
+  margin-top: 3rem;
+  &__group {
+    display: flex;
+    flex-direction: column;
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+    & > textarea {
+      min-height: 15rem;
+      max-height: 25rem;
+    }
+    & > textarea,
+    input {
+      font-size: 1.5rem;
+      width: 100%;
+      padding: 1rem;
+      resize: vertical;
+      background-color: #fff;
+      border: 1.8px solid transparent;
+      border-radius: 3px;
+      transition: all 0.3s ease-out;
+      &:hover {
+        background-color: rgba(#fff, 0.9);
+      }
+      &:focus {
+        outline: none;
+        background-color: rgba(#fff, 0.9);
+        border: 1.8px solid $secondary-color;
+      }
+    }
+  }
+  &__label {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  &__cta {
+    margin-top: 1rem;
+    text-align: right;
+    & button {
+      padding: 0.5rem 1rem;
+      background-color: $secondary-color;
+      border: none;
+      border-radius: 3px;
+      font: inherit;
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: inherit;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: color 0.3s ease-out;
+
+      &:hover {
+        color: black;
+      }
+      &:focus {
+        color: black;
+      }
+    }
+
+    & button:disabled {
+      cursor: auto;
+      background-color: rgba($secondary-color, 0.5);
+      color: rgba($text-color, 0.5);
+      &:hover {
+        color: rgba($text-color, 0.5);
+      }
+      &:focus {
+        color: rgba($text-color, 0.5);
+      }
+    }
+  }
+}

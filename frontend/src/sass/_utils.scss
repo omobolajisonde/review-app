@@ -1,0 +1,10 @@
+.error {
+  &_msg {
+    color: #ff0000 !important;
+    font-size: 1.3rem;
+    margin-top: 5px;
+  }
+  &_field {
+    border-color: #ff0000 !important;
+  }
+}
