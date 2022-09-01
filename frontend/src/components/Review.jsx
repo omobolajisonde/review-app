@@ -50,9 +50,7 @@ const Review = ({ modalHandler }) => {
       </nav>
       <main className="main">
         <h1 className="review__text">
-          Help make <span>KS Store</span> better,
-          <br />
-          please leave a review.
+          Help make <span>KS Store</span> better, please leave a review.
         </h1>
         <form className="form" onSubmit={submitHandler}>
           <div className="form__group">
