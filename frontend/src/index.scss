@@ -24,4 +24,8 @@ html{
 
 body{
     color: $text-color;
+    background-image: linear-gradient(rgba(#000, .75), rgba($secondary-color,.85)), url("./static/bg-gif.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import './App.scss';
-import {Review, Modal, BgVid} from "./components";
+import {Review, Modal} from "./components";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
     {showModal && <Modal modalHandler={modalHandler} />}
-    <BgVid />
+    {/* <BgVid /> */}
     <Review modalHandler={modalHandler} />
     </>
   );
