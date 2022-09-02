@@ -6,7 +6,7 @@ import "./BgVid.scss";
 const BgVid = () => {
   return (
     <>
-      <video id="bg_video" muted loop autoPlay={true}>
+      <video id="bg_video" muted loop autoPlay={true} playsInline>
         <source src={bg_vid} type="video/mp4" />
       </video>
       <div className="overlay"></div>
